@@ -1,0 +1,147 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3plus/1.9.2/d3plus.full.min.js"></script>
+</head>
+
+<style>
+  iframe[src*='datawrapper.dwcdn.net'] + img {
+    display: none;
+  }
+
+  @media print {
+    iframe[src*='datawrapper.dwcdn.net'] {
+      display: none;
+    }
+    iframe[src*='datawrapper.dwcdn.net'] + img {
+      display: block;
+      width: 100%;
+    }
+  }
+</style>
+
+Nombre: Javier Cupeiro Martín <br />
+
+Url:
+<a href="https://js-iu8zbd.stackblitz.io">https://js-iu8zbd.stackblitz.io</a
+><br />
+GitHub:
+<a href="https://github.com/jcupe7/js-iu8zbd"
+  >https://github.com/jcupe7/js-iu8zbd</a
+><br />
+
+<h1>Trabajo Práctico</h1>
+<h2>Contexto</h2>
+Para este trabajo se ha empleado el mismo dataset que en las asignaturas de
+"Minería de datos" y "Estadística Avanzada". El dataset en cuestión contiene el
+número y tipo de aeronaves que han despegado de los distintos aeropuertos de
+Canadá en los últimos años. Para la realización de este trabajo se ha trabajo
+con dos subsets de el dataset original, estos ya están tratados correctamente y
+no contienen outliers, null values, etc. Se han cogidos los datos de los 3
+último años disponibles 2017 a 2019. Uno contiene el trafico total del país para
+cada mes y otro lo mismo pero para cada estado.
+<br />
+
+<h2>Introducción</h2>
+En el presente trabajo se presenta un análisis del tráfico aéreo en Canadá. El
+dataset utilizado para el estudio ha sido extraído de XXXXXXXXXXXXXXXXXXX.
+<br /><br />
+
+Canadá está localizada en el norte de Norteamérica. Al oeste colinda con el
+Océano Pacífico y al este con el Océano Atlántico. Al sur colinda con Estados
+Unidos y al norte con el Océano Ártico. Se ha escogido Canadá por ser el segundo
+país más grande en el mundo, después de Rusia, ya que su territorio cubre 9.9
+millones de kilómetros cuadrados.<br /><br />
+
+En el estudio del presente trabajo, se realiza un estudio de las provincias y
+estados que consta Canadá: Alberta, Columbia Británica, Manitoba, Nuevo
+Brunswick, Terranova y Labrador, Nueva Escocia, Nunavut, Ontario, Quebec,
+Saskatchewan y Yukon.<br /><br />
+
+Además, también se analizan los tipos de aeronaves, clasificados por: Planeador,
+helicópteros, avión a reacción, aviones con motores de pistón y turbohélice.<br /><br />
+
+- Planeador: Un planeador es una aeronave de ala fija que se sostiene en vuelo
+por la reacción dinámica del aire contra sus superficies de sustentación, y cuyo
+vuelo libre no depende de un motor. La mayoría de los planeadores no tienen
+motor, aunque los planeadores a motor tienen motores pequeños para extender su
+vuelo cuando es necesario manteniendo la altitud (normalmente un planeador
+depende del aire ascendente para mantener la altitud).<br /><br />
+
+- Helicóptero: Se trata de aeronaves de alas giratorias. La principal ventaja de
+los helicópteros consiste en el rotor, el cual proporciona sustentacioón sin que
+la aeronave se desplace. Esto permite la posibilidad de poder realizar
+aterrizajes y despegues verticales.<br /><br />
+
+- Avión a reacción (jet engine): A partir de los años treinta del siglo pasado,
+los motores de turbina, también llamados de reacción acapararon gran parte de la
+aviación por unas características muy superiores a los motores de pistón. Eran
+más potentes, más seguros y simplemente permitían volar más rápido y más alto
+que ningún otro motor antes.<br /><br />
+
+- Aviones con motores de pistón (piston engine): Los aviones con motores de
+pistón son ligeros, no necesariamente rápidas. Este tipo de aeronaves suelen ser
+avionetas y aviones de uso particular.<br /><br />
+
+- Turbohélice (turbo-propeller): Se tratan de aviones regionales que utilizan
+hélices en sus motores. Presentan una gran eficiencia en relación
+velocidad-potencia que necesitan en sus rutas de corta distancia.<br /><br />
+
+<h2>Herramientas Utilizadas</h2>
+Para el análisis de los datasets se ha utilizado en primer lugar, Google sheets
+ya que permite de forma sencilla trabajar con los datos y graficar los
+resultados. Por otro lado se ha empleado Datawrapper ya que permite crear
+gráficos con mapas, con esta utilidad se ha podido graficar el mapa de Canadá
+con sus diferentes estados.<br /><br />
+
+<h2>Análisis</h2>
+Se han utilizado dos dataset para realizar el análisis del tráfico aéreo, en primer lugar, partiendo del dataset total, se modifica para obtener un análisis de la evolución durante 3 años consecutivos (2017, 2018 y 2019) del total de número de vuelos de todo el país, clasificado por meses. De esta manera, podremos obtener en qué mes operan menos aeronaves a lo que llamaremos “temporada baja” y por el contrario, en qué mes operan mayor número de aeronaves, a este mes lo llamaremos “temporada alta”.<br /><br />
+
+En primer lugar gráficamos la tendencia total de vuelos de los último años. Podemos ver claramente como se repite anualmente el mismo patrón, indicando claramente estacionalidad en los eventos.<br />
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBwc3kNk4wR7VSTaq0Clx6TyCvENVphORaPEoNtc0Oa6YZ4cxTYFM2wOE5TZHWifsjll72GUfyiNbF/pubchart?oid=812077679&amp;format=interactive"></iframe><br />
+
+Para analizar mejor esa estacionalidad decidimos mostrar en un mismo gráfico de lineas la tendencia de los 3 últimos años, cada año con un color diferente. Se aprecia que las tres comparten mínimo en el mes de febrero y un máximo en el mes de julio. Además se aprecia que estos mínimos y máximos para cada año son similares entre ellos.<br />
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBwc3kNk4wR7VSTaq0Clx6TyCvENVphORaPEoNtc0Oa6YZ4cxTYFM2wOE5TZHWifsjll72GUfyiNbF/pubchart?oid=1677083532&amp;format=interactive"></iframe><br />
+
+Para analizar con más detenimiento los mínimos y máximos representamos en un diagrama de barras el nº total de vuelos de cada mes. Este gráfico nos permite comparar de forma sencilla la cantidad de vuelos de cada mes, además se aprecia la tendencia y periodicidad. Los meses de temporada baja (febrero) se han coloreado en azul mientras que los meses de temporada alta se han coloreado en rojo. La elección de estos colores quiere reforzar el enfasis de la estacionalidad con un cierto "mapa de calor", siendo azul(frio) y rojo(calor).<br/>
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBwc3kNk4wR7VSTaq0Clx6TyCvENVphORaPEoNtc0Oa6YZ4cxTYFM2wOE5TZHWifsjll72GUfyiNbF/pubchart?oid=1705632141&amp;format=interactive"></iframe><br />
+
+Sabiendo ahora que los meses de febrero y julio son los que tienen respectivamente menor y mayor tráfico aereo, procedemos a analizar el número total de vuelos de cada tipo de aeronave en estos meses. Para ello se ha hecho una media de los últimos años en estos meses y se ha representado en un gráfico de barras los dos meses, con un color distinto cada tipo de aeronave. Con esto se busca comparar dentro de cada mes que aeronaves vuelan más y a la vez comparar estas en los dos meses. De esta manera podemos apreciar como en el mes de febrero los valores de cada tipo de aeronave son menores que en julio. Es llamativo como los Gliders son practicamente inexistentes en febrero, lo cual podría estar relacionado con las condiciones climaticas de Canadá durante ese epoca, además de que este tipo de aeronave es de uso más recreativo, lo cual tiene más sentido que se utilice más en meses más vacacionales como es julio. <br/>
+Curiosamente se aprecia que las aeronaves de tipo "Piston engines" pasan de un tercer lugar en febrero a un segundo lugar en julio. En este caso no se ha querido ordenar de mayor a menor el mes de julio ya que se quería recalcar este dato.<br/>
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRBwc3kNk4wR7VSTaq0Clx6TyCvENVphORaPEoNtc0Oa6YZ4cxTYFM2wOE5TZHWifsjll72GUfyiNbF/pubchart?oid=1223876007&amp;format=interactive"></iframe><br /><br/>
+
+Procedemos a analizar con más detalle esta estacionalidad en los distintos estados de Canadá. Para ello nos hemos ayudado de Datawrapper que nos permite crear mapas interactivos. En este primer mapa, representamos el número total de vuelos en el mes de febrero. Se ha empleado un mapa de calor con colores que van del azul al rojo pasando por el blanco que indican respectivamente menor a mayor número de vuelos. El usuario además al pasar el ratón por el mapa puede ver el nombre del estado y número total de vuelos. <br/>
+De forma muy marcada se ve que el estado de Ontario es el que más vuelos tiene, mientras que el estado de Northwest Territories es el que menos tiene.<br/>
+<iframe title="Vuelos totales temporada baja estados Canadá 2018" aria-label="Map" id="datawrapper-chart-11Agg" src="https://datawrapper.dwcdn.net/11Agg/1/" scrolling="no" frameborder="0" style="border: none;" width="600" height="665" data-external="1"></iframe><br /><br/>
+
+El siguiente mapa de calor de Canadá muestra el número total de vuelos por estado en el mes de julio. Vemos como todos los estamos aumentan significativamente su número total de vuelos. <br/>
+<iframe title="Vuelos totales temporada alta estados Canadá 2018" aria-label="Map" id="datawrapper-chart-J3sMh" src="https://datawrapper.dwcdn.net/J3sMh/1/" scrolling="no" frameborder="0" style="border: none;" width="600" height="665" data-external="1"></iframe><br /><br/>
+
+Para poder comparar con más detalle el número de vuelos realizados en cada estado en temporada baja (febrero), procedemos a representar estos valores en un diagrama de barras horizontal. En este caso vamos a trabajar con los datos de 2019, se aprecia que al igual que en 2018 Ontario sigue siendo el estado con mayor número de vuelos, con una diferencia de varios ordenes de magnitud mayor que el último estado, el cual en ese año es Yukon.<br/>
+<iframe width="885" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkkPXg9sFa4MBvuvdeWqceoVbfoGJyrkX61jquLf3hoO41sODW-kXLTRSx3j3vLBFKAI3lLB1tsYy8/pubchart?oid=445385503&amp;format=interactive"></iframe><br/><br/>
+
+En temporada alata (julio) se aprecia que que el número de vuelos es mayor que en febrero y además se sigue manteniendo el mismo ranking entre estados a diferencia de Quebec que sube una posición.<br/>
+<iframe width="867" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkkPXg9sFa4MBvuvdeWqceoVbfoGJyrkX61jquLf3hoO41sODW-kXLTRSx3j3vLBFKAI3lLB1tsYy8/pubchart?oid=305376996&amp;format=interactive"></iframe><br/><br/>
+
+En último lugar analizamos el número total de vuelos realizado por cada tipo de aeronave en el estado con mayor tráfico aereo, Ontario. Dado que vamos a comparar entre diferentes valores, nos inclinamos por utilizar un diagrama de barras horizontal marcando cada tipo de aeronave de un color. <br/>
+A primera vista se ve como es inexistente el número de vuelos de los Gliders, los helicopteros presentan más vuelos que este último pero siguen quedando muy atras de los Jet engines. Esto tiene sentido ya que los dos primeros tipos de aeronaves citadas son pequeñas y suelen emplearse para el transporte de pocos pasajeros y suelen ser empleadas en usos más recreativos. Por otro lado los otros tipos de aeronaves al ser más potentes y con mayor capacidad de carga y espacio son más empleadas a la hora de transportar pasajeros y mercancias, lo cual es más eficiente, de ahí su alto uso.<br/>
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkkPXg9sFa4MBvuvdeWqceoVbfoGJyrkX61jquLf3hoO41sODW-kXLTRSx3j3vLBFKAI3lLB1tsYy8/pubchart?oid=681593977&amp;format=interactive"></iframe><br/><br/>
+
+
+En esta última gráfica mostramos los mismos valores que la gráfica anterior pero esta vez para el mes de julio. Se aprecia claramente que el número total de vuelos aumenta considerablemente, a excepción de los Gliders que siguen siendo practicamente despreciables. Tal y como habíamos detectado previamente es curioso ver como las aeronaves de tipo "piston engines" pasan a un segundo lugar en temporada alta.<br/>
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRkkPXg9sFa4MBvuvdeWqceoVbfoGJyrkX61jquLf3hoO41sODW-kXLTRSx3j3vLBFKAI3lLB1tsYy8/pubchart?oid=1543778909&amp;format=interactive"></iframe><br/><br/>
+
+<h2>Conclusiones</h2>
+Hemos visto en este estudio como se distribuye el tráfico aereo de Canadá en los distintos estados. Hemos podido ver además que los meses de temporada baja y alta son febrero y julio respectivamente, lo cual tiene sentido al ser Canadá un estado situado en el emisferio norte del planeta, donde los meses de verano es cuando mejor tiempo hace y más vacaciones tiene la gente. Por otro lado hemos visto que tipos de aeronaves vuelan más que otras y hemos detectado que una de ellas cambia mucho de temporada baja a alta, los "piston engines". En un trabajo futuro sería interesante estudiar con más detalle esta última aeronave asi como analizar que aeropuertos de cada estado son los que mayor tráfico aereo tienen, con vistas a crear en un futuro un modelo de Machine Learning que nos ayude a predecir el número de vuelos que tendremos cada mes.<br/><br/>
+
+
+<h2>Referencias</h2>
+[1] Nav Canada Wikipedia.<a href="https://en.wikipedia.org/wiki/Nav_Canada"
+>https://en.wikipedia.org/wiki/Nav_Canada</a
+><br />
+[2] Itinerant movements by type of power plant, airports with NAV CANADA towers, monthly.<a href="https://open.canada.ca/data/en/dataset/9f47e242-79f2-49d8-95f7-e89741d53bee"
+>https://open.canada.ca/data/en/dataset/9f47e242-79f2-49d8-95f7-e89741d53bee</a
+><br />
+
+
+
